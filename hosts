@@ -1,0 +1,5 @@
+[localhost]
+local
+
+[localhost:vars]
+ansible_python_interpreter  = "python3"

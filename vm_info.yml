@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: Check EC2
+    amazon.aws.ec2_instance_info:
+      filters:
+        instance-state-name: 
+          - "pending"
+    register: ec2_node_info
+
+  - name: result
+    debug:
+      var: ec2_node_info

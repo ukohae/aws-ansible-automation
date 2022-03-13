@@ -1,0 +1,43 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    region_1: "us-east-2"
+    state_1: "absent"
+    instance_type_1: "t2.micro"
+    security: "ansible-security-group"
+
+  tasks:
+  - name: security group
+    ec2_group:
+      rules:
+        - proto: tcp
+          from_port: 8080
+          to_port: 8080
+          cidr_ip: "0.0.0.0/0"
+        - proto: tcp
+          from_port: 22
+          to_port: 22
+          cidr_ip: "0.0.0.0/0"
+      rules_egress:
+        - from_port: 0
+          proto: tcp
+          o_port: 65535
+      region: "{{ region_1 }}"
+      state: "{{ state_1 }}"
+      name: "{{ security }}"
+      description: "ansible created this"
+
+  - name: delete ec2
+    ec2_instance:
+      name: "Ansible Created this"
+      region: "{{ region_1 }}"
+      image_id: "ami-03a0c45ebc70f98ea"
+      instance_type: "{{ instance_type_1 }}"
+      key_name: "DevOps-2022"
+      security_group: "{{ security }}"
+      state: "{{ state_1 }}"
+
+
