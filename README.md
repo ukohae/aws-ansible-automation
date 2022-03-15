@@ -14,19 +14,19 @@ $Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManag
 ```
 - Install WSL2 via Chocolatey
 ```
-$ choco install WSL2
+choco install WSL2
 ```
 
 ## Create virtual Environment
 ```
-$ source venv/bin/activate
+source venv/bin/activate
 ```
 ```
-$ sudo apt update && upgrade
+sudo apt update && upgrade
 ```
 ```
-$ sudo apt install python3 python3-pip ipython3
+sudo apt install python3 python3-pip ipython3
 ```
 ```
-$ pip install ansible==5.4.0
+pip install ansible==5.4.0
 ```
