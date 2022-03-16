@@ -1,6 +1,6 @@
-# Ansible with AWS
+# Automation with Ansible in AWS
 
-## Requirement
+## Software Requirement
 - `WSL2 `
 - `Ansible`
 - `AWS CLI`
