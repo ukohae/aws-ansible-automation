@@ -8,16 +8,18 @@
 
 ## Installation on Windows Machine
 - Enable `Hyper-V`
-    1. Open a Powershell console as an Administrator.
+    1. Open a `Powershell console as an Administrator`.
     2. Run the following command:
         ```
         Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
         ```
-- Open `Powershell as an Administrator`
-    - Install `Chocolatey`
-        ```
-        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-        ```
+- Install `Chocolatey` 
+    1. Open a `Powershell console as an Administrator`.
+    2. Run the following command:
+    ```  
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    ```
+
     - Install `WSL2`
         ```
         choco install WSL2
