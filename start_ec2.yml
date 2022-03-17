@@ -16,6 +16,6 @@
 
   tasks:
   - name: start ec2
-    ec2_instance:
+    amazon.aws.ec2_instance:
       instance_ids: "{{ ids }}"
-      state: "stopped"
+      state: "started"

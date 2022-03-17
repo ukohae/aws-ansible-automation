@@ -30,7 +30,7 @@
       name: "{{ security }}"
       description: "ansible created this"
 
-  - name: delete ec2
+  - name: create ec2
     ec2_instance:
       name: "Ansible Created this"
       region: "{{ region_1 }}"

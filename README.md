@@ -60,7 +60,7 @@
     ```
 
 ## AWS Credentials
-- Generate `Access Key` and `Secret Keys` from AWS
+- Generate `Access Key` and `Secret Keys` from AWS [Click Here](https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-2#/security_credentials)
     - In `WSL2`, do:
         ```
         aws configure
