@@ -8,6 +8,11 @@
 
 ## Installation on Windows Machine
 - Enable `Hyper-V`
+    1. Open a Powershell console as an Administrator.
+    2. Run the following command:
+        ```
+        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+        ```
 - Open `Powershell as an Administrator`
     - Install `Chocolatey`
         ```
