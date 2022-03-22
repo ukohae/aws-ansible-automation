@@ -17,6 +17,10 @@
         ```
         choco install WSL2
         ```
+    - Install `WSL extension` on VScode and `Install Ubuntu distro`
+        ```
+        choco install wsl-ubuntu-2004
+        ```
 ## After successful Installation
 
 - `Open Visual Studio Code (IDE)`
