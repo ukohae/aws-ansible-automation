@@ -1,10 +1,10 @@
 # Ansible Automation in AWS
 
 ## Software Requirement
-- `WSL2 ` [click here](https://docs.microsoft.com/en-us/windows/wsl/about)
-- `Ansible`  [click here](https://www.ansible.com/)
-- `AWS CLI`
-- `Visual Studio Code (IDE)`
+- `WSL2 ` [Click Here](https://docs.microsoft.com/en-us/windows/wsl/about) to learn more
+- `Ansible` [Click Here](https://www.ansible.com/) to learn more
+- `AWS CLI`  [Click Here](https://aws.amazon.com/cli/) to learn more
+- `Visual Studio Code (IDE)`  [Click Here](https://code.visualstudio.com/) to learn more
 
 ### Installation on Windows Machine
 - Enable `Hyper-V` <br />
