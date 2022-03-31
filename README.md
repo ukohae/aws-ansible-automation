@@ -35,9 +35,7 @@
         ```
 ### After successful Installation
 
-- `Open Visual Studio Code (IDE)`
-
-- `Clone repository`
+- `Open Visual Studio Code (IDE)`, click on `Terminal`,  `New Terminal` and `Clone repository`
     ```
     git clone https://github.com/ukohae/aws_ansible.git
     ```
