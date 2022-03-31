@@ -33,15 +33,22 @@
         ```
         choco install vscode
         ```
+
+    -  Search for `Ubuntu` on your windows and `Run as an Administrator`
+        - enter `username` and `password` on the command line.
 ### After successful Installation
 
-- `Open Visual Studio Code (IDE)`, click on `Terminal`,  `New Terminal` and `Clone repository`
+- `Open Visual Studio Code (IDE)`, click on `Terminal`,  select `New Terminal` and `Clone repository`
     ```
     git clone https://github.com/ukohae/aws_ansible.git
     ```
     - Go into `aws_ansible` directory 
         ```
         cd aws_ansible
+        ```
+    - open `aws_ansible`
+        ```
+        code .
         ```
     - Enable `Virtual Environemt`
         ```
