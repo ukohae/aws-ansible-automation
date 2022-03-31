@@ -7,12 +7,19 @@
 - `Visual Studio Code (IDE)`
 
 ## Installation on Windows Machine
-- Enable `Hyper-V`
+- Enable `Hyper-V` <br />
+`Windows Settings`
+    1. Right-click the Windows button on your desktop and select Apps and Features
+    2. Choose `Programs and Features` located on the right.
+    3. Choose `Turn Windows features` on or off.
+    4. Check the box next to `Hyper-V`, including `Hyper-V Management Tools` and `Hyper-V Platform`, and click `OK`.
+
 - Open `Powershell as an Administrator`
     - Install `Chocolatey`
         ```
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         ```
+    - Restart `Windows`
     - Install `WSL2`
         ```
         choco install WSL2
