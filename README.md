@@ -46,10 +46,11 @@
         ```
         cd aws_ansible
         ```
-    - open `aws_ansible`
+    - open `aws_ansible` folder by typing:
         ```
         code .
         ```
+        select `Trust Respository`
     - Enable `Virtual Environemt`
         ```
         source venv/bin/activate
