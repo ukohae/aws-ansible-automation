@@ -25,6 +25,7 @@
     debug:
       var: names
 
-  - name: display result
-    debug:
-      msg: "{{ result_names.names | map(attribute='instance_id') }}"
+  - name: start ec2
+    ec2_instance:
+      instance_ids: "{{ result_names.names | map(attribute='instance_id') }}"
+      state: "started"
