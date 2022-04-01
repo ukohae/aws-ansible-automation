@@ -16,26 +16,12 @@
 
 - Restart `Windows Computer`
 
-<<<<<<< HEAD
 - Open `Powershell as an Administrator`
     - Install `Chocolatey`
-=======
-## Installation on Windows Machine
-- Enable `Hyper-V`
-    1. Open a `Powershell console as an Administrator`.
-    2. Run the following command:
->>>>>>> 1191985d951a746f76e7befeb8441e5419920532
         ```
-        Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+        Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         ```
-- Install `Chocolatey` 
-    1. Open a `Powershell console as an Administrator`.
-    2. Run the following command:
-    ```  
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    ```
-
-    - Still in the `Powershell console`, install `WSL2`
+    - Install `WSL2`
         ```
         choco install WSL2
         ```
@@ -65,10 +51,7 @@
         code .
         ```
         Select `Trust Respository`
-    - Enable `Virtual Environemt`
-        ```
-        source venv/bin/activate
-        ```
+
         - In the `Virtual Environment` perform the following:
             ```
             sudo apt update
@@ -81,6 +64,8 @@
             ```
             ```
             pip install awscli
+            pip install botocore
+            pip install boto3
             ```
 
 ## Check if the following are installed
@@ -93,6 +78,11 @@
 - `Ansible `
     ```
     ansible --version
+    ```
+
+- `AWS CLI`
+    ```
+    aws --version
     ```
 
 ## AWS Credentials
