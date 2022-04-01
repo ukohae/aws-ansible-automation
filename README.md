@@ -88,4 +88,11 @@
         aws configure
         ```
     - Parse the following: <br />
-        `Access Key: `<br /> `Secret Key: `<br /> `Region: `
+        `Access Key: `<br /> `Secret Key: `<br /> `Region: ` <br /> `Default Output Format: `
+
+
+## Run a Playbook
+-   On the `Command Line`, run :
+    ```
+    ansible-playbook virtual_machine_info.yml
+    ```
