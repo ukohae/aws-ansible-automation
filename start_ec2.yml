@@ -5,14 +5,6 @@
   vars: 
     ids: 
     - i-0e54aa4fa6bb4b976
-    - i-015ca662b9d818db1
-    - i-0ae89ee3e3eb2a950
-    - i-0c09e34061e4c1e57
-    - i-03652f72c5e85817a
-    - i-06a72fdb2b1538a49
-    - i-060465d3de5e23a1e
-    - i-02773faebe39419ed
-    - i-014b360b2662ce877
 
   tasks:
   - name: start ec2

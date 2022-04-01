@@ -8,6 +8,7 @@
     state_1: "absent"
     instance_type_1: "t2.micro"
     security: "ansible-security-group"
+    key_name : "DevOps-2022"
 
   tasks:
   - name: security group
@@ -36,7 +37,7 @@
       region: "{{ region_1 }}"
       image_id: "ami-03a0c45ebc70f98ea"
       instance_type: "{{ instance_type_1 }}"
-      key_name: "DevOps-2022"
+      key_name: "{{ key_name }}"
       security_group: "{{ security }}"
       state: "{{ state_1 }}"
 

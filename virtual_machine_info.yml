@@ -8,7 +8,7 @@
     amazon.aws.ec2_instance_info:
       filters:
         instance-state-name: 
-          - "pending"
+          - "stopped"
     register: ec2_node_info
 
   - name: result
