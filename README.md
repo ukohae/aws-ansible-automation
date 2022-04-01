@@ -51,10 +51,7 @@
         code .
         ```
         Select `Trust Respository`
-    - Enable `Virtual Environemt`
-        ```
-        source venv/bin/activate
-        ```
+
         - In the `Virtual Environment` perform the following:
             ```
             sudo apt update
@@ -81,6 +78,11 @@
 - `Ansible `
     ```
     ansible --version
+    ```
+
+- `AWS CLI`
+    ```
+    aws --version
     ```
 
 ## AWS Credentials
