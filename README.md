@@ -67,6 +67,8 @@
             ```
             ```
             pip install awscli
+            pip install botocore
+            pip install boto3
             ```
 
 ## Check if the following are installed
