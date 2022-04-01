@@ -54,7 +54,7 @@
     - Clone `aws_ansible` repository 
         ```
         git clone https://github.com/ukohae/aws_ansible.git
-    ```
+        ```
     - Go into `aws_ansible` directory 
         ```
         cd aws_ansible
