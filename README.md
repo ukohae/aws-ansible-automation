@@ -12,20 +12,26 @@
     1. Right-click the Windows button on your desktop and select Apps and Features
     2. Choose `Programs and Features` located on the right.
     3. Choose `Turn Windows features` on or off.
-    4. Check the box next to `Hyper-V`, including `Hyper-V Management Tools` and `Hyper-V Platform`, and click `OK`.
+    4. Check the box next to `Hyper-V`, including `Hyper-V Management Tools` and `Hyper-V Platform`, and click `OK`. <br /> <br />
 
-- Restart `Windows Computer`
+        ![hyper-v](docs/images/hyper-v.png)
 
-- Open `Powershell as an Administrator`
+- Restart `Windows Computer` <br /> <br />
+    ![restart](docs/images/restart.png)
+
+- Open `Powershell as an Administrator` <br /> <br />
+        ![powershell](docs/images/powershell.png)
     - Install `Chocolatey`
         ```
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         ```
+        
+        ![chocolatey](docs/images/chocolatey.png)
     - Install `WSL2`
         ```
         choco install WSL2
         ```
-    - Install `WSL extension` on VScode and `Install Ubuntu distro`
+    - Install `Ubuntu distro`
         ```
         choco install wsl-ubuntu-2004
         ```
@@ -34,13 +40,20 @@
         choco install vscode
         ```
 
-    -  Search for `Ubuntu` on your windows and `Run as an Administrator`
+    -  Search for `Ubuntu 20.04` on your `Windows` and `Run as an Administrator` <br /> <br />
+            ![ubuntu](docs/images/ubuntu.png)
         - enter `username` and `password` on the command line.
 ### After successful Installation
 
-- `Open Visual Studio Code (IDE)`, click on `Terminal`,  select `New Terminal` and `Clone repository`
-    ```
-    git clone https://github.com/ukohae/aws_ansible.git
+- `Open Visual Studio Code (IDE)`, click on `Terminal`,  select `New Terminal` <br /><br />
+![terminal](docs/images/terminal.png) <br /><br />
+
+- Install `WSL extension` on Visual Studio Code <br /><br />
+![wsl](docs/images/wsl.png)
+
+    - Clone `aws_ansible` repository 
+        ```
+        git clone https://github.com/ukohae/aws_ansible.git
     ```
     - Go into `aws_ansible` directory 
         ```
@@ -50,9 +63,10 @@
         ```
         code .
         ```
-        Select `Trust Respository`
+        Select `Trust the authors of all files` checkbox <br /><br />
+        ![trust file](docs/images/user.png)
 
-        - In the `Virtual Environment` perform the following:
+        - Run the following commands:
             ```
             sudo apt update
             ```
@@ -64,11 +78,15 @@
             ```
             ```
             pip install awscli
+            ```
+            ```
             pip install botocore
+            ```
+            ```
             pip install boto3
             ```
 
-## Check if the following are installed
+## Verify the following installation:
 
 - `Python3`
     ```
@@ -92,10 +110,10 @@
         aws configure
         ```
     - Parse the following: <br />
-        `Access Key: `<br /> `Secret Key: `<br /> `Region: ` <br /> `Default Output Format: `
+        `AWS Access Key ID [None]: `<br /> `AWS Secret Access Key [None]: `<br /> `Default region name [None]: ` <br /> `Default output format [None]: `
 
 
-## Run a Playbook
+### Test a Playbook! 
 -   On the `Command Line`, run :
     ```
     ansible-playbook virtual_machine_info.yml
