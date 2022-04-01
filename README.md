@@ -51,9 +51,9 @@
 - Install `WSL extension` on Visual Studio Code <br /><br />
 ![wsl](docs/images/wsl.png)
 
-    - `Clone repository` 
-    ```
-    git clone https://github.com/ukohae/aws_ansible.git
+    - Clone `aws_ansible` repository 
+        ```
+        git clone https://github.com/ukohae/aws_ansible.git
     ```
     - Go into `aws_ansible` directory 
         ```
@@ -86,7 +86,7 @@
             pip install boto3
             ```
 
-## Check if the following are installed
+## Verify the following installation:
 
 - `Python3`
     ```
