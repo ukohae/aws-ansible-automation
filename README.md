@@ -50,14 +50,14 @@
         ```
         code .
         ```
-        select `Trust Respository`
+        Select `Trust Respository`
     - Enable `Virtual Environemt`
         ```
         source venv/bin/activate
         ```
         - In the `Virtual Environment` perform the following:
             ```
-            sudo apt update && upgrade
+            sudo apt update
             ```
             ```
             sudo apt install python3 python3-pip ipython3
