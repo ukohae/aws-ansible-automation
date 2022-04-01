@@ -52,7 +52,7 @@
         ```
         Select `Trust Respository`
 
-        - In the `Virtual Environment` perform the following:
+        - Run the following commands:
             ```
             sudo apt update
             ```
@@ -64,7 +64,11 @@
             ```
             ```
             pip install awscli
+            ```
+            ```
             pip install botocore
+            ```
+            ```
             pip install boto3
             ```
 
@@ -92,10 +96,10 @@
         aws configure
         ```
     - Parse the following: <br />
-        `Access Key: `<br /> `Secret Key: `<br /> `Region: ` <br /> `Default Output Format: `
+        `AWS Access Key ID [None]: `<br /> `AWS Secret Access Key [None]: `<br /> `Default region name [None]: ` <br /> `Default output format [None]: `
 
 
-## Run a Playbook
+### Test a Playbook! 
 -   On the `Command Line`, run :
     ```
     ansible-playbook virtual_machine_info.yml
