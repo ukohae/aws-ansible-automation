@@ -12,15 +12,21 @@
     1. Right-click the Windows button on your desktop and select Apps and Features
     2. Choose `Programs and Features` located on the right.
     3. Choose `Turn Windows features` on or off.
-    4. Check the box next to `Hyper-V`, including `Hyper-V Management Tools` and `Hyper-V Platform`, and click `OK`.
+    4. Check the box next to `Hyper-V`, including `Hyper-V Management Tools` and `Hyper-V Platform`, and click `OK`. <br /> <br />
 
-- Restart `Windows Computer`
+        ![hyper-v](docs/images/hyper-v.png)
 
-- Open `Powershell as an Administrator`
+- Restart `Windows Computer` <br /> <br />
+    ![restart](docs/images/restart.png)
+
+- Open `Powershell as an Administrator` <br /> <br />
+        ![powershell](docs/images/powershell.png)
     - Install `Chocolatey`
         ```
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         ```
+        
+        ![chocolatey](docs/images/chocolatey.png)
     - Install `WSL2`
         ```
         choco install WSL2
@@ -34,7 +40,8 @@
         choco install vscode
         ```
 
-    -  Search for `Ubuntu` on your windows and `Run as an Administrator`
+    -  Search for `Ubuntu 20.04` on your `Windows` and `Run as an Administrator` <br /> <br />
+            ![ubuntu](docs/images/ubuntu.png)
         - enter `username` and `password` on the command line.
 ### After successful Installation
 
@@ -50,7 +57,8 @@
         ```
         code .
         ```
-        Select `Trust Respository`
+        Select `Trust the authors of all files` checkbox <br /><br />
+        ![trust file](docs/images/user.png)
 
         - Run the following commands:
             ```
