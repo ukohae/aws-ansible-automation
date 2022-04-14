@@ -66,7 +66,7 @@
         Select `Trust the authors of all files` checkbox <br /><br />
         ![trust file](docs/images/user.png)
 
-        - Run the following commands as a root user in Ubuntu:
+        - Run the following commands as a `root user in Ubuntu`:
             ```
             sudo su -
             ```
