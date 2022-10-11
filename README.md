@@ -71,21 +71,15 @@
             source venv/bin/activate
             ```
 
-        - Run the following commands as a `root user in Ubuntu`:
+        - Run the following commands in the virtual environment `venv`:
             ```
-            sudo su -
-            ```
-            ```
-            apt update
+            sudo apt update
             ```
             ```
-            apt install python3 python3-pip ipython3
+            sudo apt install python3 python3-pip ipython3
             ```
             ```
-            exit
-            ```
-            ```
-            pip install ansible==5.4.0
+            sudo apt install ansible-core
             ```
             ```
             pip install awscli
