@@ -3,29 +3,17 @@
   connection: local
   gather_facts: false
 
+  vars:
+    aws_region: "us-east-1"   # update your region here
+
   tasks:
   - name: get all instance info
     ec2_instance_info:
+      region: "{{ aws_region }}"
     register: result
-  
-  - name: get instance id 
-    set_fact: 
-      anything: "{{ result['instances'] }}"
-    register: filterd_result
-  
-  - name: get all ids
-    vars:
-      reduce_query: >-
-        [].{
-        instance_id: instance_id
-        }
-      names: "{{ anything | json_query(reduce_query)}}"
-    register: result_names
-    no_log: true
-    debug:
-      var: names
 
   - name: start ec2
     ec2_instance:
-      instance_ids: "{{ result_names.names | map(attribute='instance_id') }}"
+      region: "{{ aws_region }}"
+      instance_ids: "{{ result.instances | map(attribute='instance_id') }}"
       state: "started"
