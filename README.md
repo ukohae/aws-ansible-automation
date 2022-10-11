@@ -66,15 +66,23 @@
         Select `Trust the authors of all files` checkbox <br /><br />
         ![trust file](docs/images/user.png)
 
+        - Source the virtual environment `venv` folder
+            ```
+            source venv/bin/activate
+            ```
+
         - Run the following commands as a `root user in Ubuntu`:
             ```
             sudo su -
             ```
             ```
-            sudo apt update
+            apt update
             ```
             ```
-            sudo apt install python3 python3-pip ipython3
+            apt install python3 python3-pip ipython3
+            ```
+            ```
+            exit
             ```
             ```
             pip install ansible==5.4.0
