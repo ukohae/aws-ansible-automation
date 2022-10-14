@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    aws_region: "us-east-1"   # update your region here
+
+  tasks:
+  - name: get all instance info
+    ec2_instance_info:
+      region: "{{ aws_region }}"
+    register: result
+
+  - name: stop ec2
+    ec2_instance:
+      region: "{{ aws_region }}"
+      instance_ids: "{{ result.instances | map(attribute='instance_id') }}"
+      state: "stopped"
