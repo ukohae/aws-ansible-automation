@@ -55,6 +55,15 @@
         ```
         git clone https://github.com/ukohae/aws_ansible.git
         ```
+        
+    - If issues persist while cloning the repository on Ubuntu Linux, do the following:
+        ```
+        sudo rm /etc/resolv.conf
+        sudo bash -c 'echo "nameserver 8.8.8.8" > /etc/resolv.conf'
+        sudo bash -c 'echo "[network]" > /etc/wsl.conf'
+        sudo bash -c 'echo "generateResolvConf = false" >> /etc/wsl.conf'
+        sudo chattr +i /etc/resolv.conf
+        ```
     - Go into `aws_ansible` directory 
         ```
         cd aws_ansible
