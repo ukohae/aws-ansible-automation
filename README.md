@@ -82,22 +82,19 @@
 
         - Run the following commands in the virtual environment `venv`:
             ```
-            sudo apt update
+            sudo apt update -y
             ```
             ```
-            sudo apt install python3 python3-pip ipython3
+            sudo apt install python3 python3-pip ipython3 -y
             ```
             ```
-            sudo apt install ansible-core
+            sudo apt install ansible-core -y
             ```
             ```
             pip install awscli
             ```
             ```
-            pip install botocore
-            ```
-            ```
-            pip install boto3
+            pip install botocore && pip install boto3
             ```
 
 ## Verify the following installation:
