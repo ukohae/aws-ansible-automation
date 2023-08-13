@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: 3
-    - name: install
+    - name: configure environment
       run: |
         pip install boto3 botocore
 
