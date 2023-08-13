@@ -21,6 +21,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3
+    - name: install
+      run: |
+        pip install boto3 botocore
+
     - name: Run playbook
       uses: dawidd6/action-ansible-playbook@v2
       with:
