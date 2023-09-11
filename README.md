@@ -1,4 +1,4 @@
-# Ansible Automation in AWS [![Ansible](https://github.com/ukohae/aws-ansible-automation/actions/workflows/ansible.yml/badge.svg)](https://github.com/ukohae/aws-ansible-automation/actions/workflows/ansible.yml)
+# Ansible Automation in AWS ![Ansible Job](https://github.com/ukohae/aws-ansible-automation/actions/workflows/ansible.yml/badge.svg)
 
 ## Software Requirement
 - `WSL2 ` [Click Here](https://docs.microsoft.com/en-us/windows/wsl/about) to learn more
