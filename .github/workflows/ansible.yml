@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Ansible Job'
 
 on:
   push:
