@@ -1,4 +1,4 @@
-name: 'Ansible Job'
+name: 'Ansible Deployment'
 
 on:
   push:
