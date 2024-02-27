@@ -1,0 +1,61 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    region_1: "us-east-1"
+    state_1: "absent"
+    instance_type_1: "t2.micro"
+    security: "ansible-security-group"
+    key_name: "key"
+
+  tasks:
+  - name: remove OpenSSH keypair
+    community.crypto.openssh_keypair:
+      path: "{{ key_name }}"
+      state: "{{ state_1 }}"
+
+  - name: get ami-id
+    amazon.aws.ec2_ami_info:
+      owners: 099720109477
+      filters:
+        name: "ubuntu/images/hvm-ssd/ubuntu-*-22.04-amd64-server-*"
+      region: "{{ region_1 }}"
+    register: result
+
+  - name: delete ec2
+    amazon.aws.ec2_instance:
+      name: "Ansible-EC2"
+      region: "{{ region_1 }}"
+      image_id: "{{ result.images[-1].image_id }}"
+      instance_type: "{{ instance_type_1 }}"
+      key_name: "{{ key_name }}"
+      security_group: "{{ security }}"
+      state: "{{ state_1 }}"
+
+  - name: delete security group
+    amazon.aws.ec2_security_group:
+      rules:
+        - proto: tcp
+          from_port: 8080
+          to_port: 8080
+          cidr_ip: "0.0.0.0/0"
+        - proto: tcp
+          from_port: 22
+          to_port: 22
+          cidr_ip: "0.0.0.0/0"
+      rules_egress:
+        - from_port: 0
+          proto: tcp
+          to_port: 65535
+          cidr_ip: 0.0.0.0/0
+          group_name: "ansible group name"
+          group_desc: EC2 group
+      region: "{{ region_1 }}"
+      state: "{{ state_1 }}"
+      name: "{{ security }}"
+      description: "ansible created this"
+
+  - name: rm pem key
+    shell: "rm -rf *pem"

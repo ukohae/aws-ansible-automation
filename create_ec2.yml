@@ -4,15 +4,20 @@
   gather_facts: false
 
   vars:
-    region_1: "us-east-2"
-    state_1: "absent"
+    region_1: "us-east-1"
+    state_1: "present"
     instance_type_1: "t2.micro"
     security: "ansible-security-group"
-    key_name : "DevOps-2022"
+    key_name: "key"
 
   tasks:
-  - name: security group
-    ec2_group:
+  - name: generate an OpenSSH keypair
+    community.crypto.openssh_keypair:
+      path: "{{ key_name }}"
+      state: "{{ state_1 }}"
+
+  - name: create security group
+    amazon.aws.ec2_security_group:
       rules:
         - proto: tcp
           from_port: 8080
@@ -25,20 +30,41 @@
       rules_egress:
         - from_port: 0
           proto: tcp
-          o_port: 65535
+          to_port: 0
+          cidr_ip: 0.0.0.0/0
+          group_name: "ansible group name"
+          group_desc: EC2 group
       region: "{{ region_1 }}"
       state: "{{ state_1 }}"
       name: "{{ security }}"
       description: "ansible created this"
 
-  - name: create ec2
-    ec2_instance:
-      name: "Ansible Created this"
+  - name: get ami-id
+    amazon.aws.ec2_ami_info:
+      owners: 099720109477
+      filters:
+        name: "ubuntu/images/hvm-ssd/ubuntu-*-22.04-amd64-server-*"
       region: "{{ region_1 }}"
-      image_id: "ami-03a0c45ebc70f98ea"
+    register: result
+
+  - name: create ec2 key pair
+    amazon.aws.ec2_key:
+      name: "{{ key_name }}"
+      region: "{{ region_1 }}"
+      state: "{{ state_1 }}"
+      key_material: "{{ lookup('file', '{{ key_name }}.pub') }}"
+    no_log: true
+    register: aws_ec2_key_pair
+
+  - name: create ec2
+    amazon.aws.ec2_instance:
+      name: "Ansible-EC2"
+      region: "{{ region_1 }}"
+      image_id: "{{ result.images[-1].image_id }}"
       instance_type: "{{ instance_type_1 }}"
       key_name: "{{ key_name }}"
       security_group: "{{ security }}"
       state: "{{ state_1 }}"
 
-
+  - name: rename key
+    shell: "mv {{ key_name }} {{ key_name }}.pem && chmod 400 {{ key_name }}.pem"
