@@ -30,10 +30,10 @@ git clone https://github.com/devops-terraform-aws/devsecops.git
     pip install awscli && pip install botocore && pip install boto3
     ```
     ```
-    export ANSIBLE_COLLECTIONS_PATH=~/home/$USER/aws-ansible-automation
-    ```
-    ```
     ansible-galaxy collection install amazon.aws
+    ```
+    ```
+    ansible-galaxy collection install community.crypto
     ```
 
 ## Verify the following installation:
